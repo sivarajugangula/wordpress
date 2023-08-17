@@ -15,6 +15,8 @@ RUN mv wordpress/* /var/www/html/
 RUN mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 RUN sed -i 's/database_name_here/sivadb/g' /var/www/html/wp-config.php
 RUN sed -i 's/username_here/sivaraju/g' /var/www/html/wp-config.php
-RUN sed -i 's/password_here/123456/g' /var/www/html/wp-config.php
+RUN sed -i 's/password_here/12345678/g' /var/www/html/wp-config.php
+RUN sed -i 's/localhost/sivadb.c2kilpxc7jb3.us-east-1.rds.amazonaws.com/g' /var/www/html/wp-config.php
+EXPOSE 3306
 EXPOSE 80
 CMD apachectl -D FOREGROUND
